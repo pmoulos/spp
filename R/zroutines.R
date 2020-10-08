@@ -977,7 +977,7 @@ t.plotcc <- function(ac, lab=c(10,5,7), ylab="correlation", xlab="lag", pch=19, 
   
       tags <- ttl[[ci]]; 
       avw <- unlist(lapply(tags,length));    avw <- avw/sum(avw);    
-      ac <- ac[!ina,]; avw <- avw[!ina];
+      ac <- ac[!ina,,drop=FALSE]; avw <- avw[!ina];
       ac <- apply(ac,2,function(x) sum(x*avw));
       if(plot) {
         m <- t.plotcc(ac, main=main, ...);
